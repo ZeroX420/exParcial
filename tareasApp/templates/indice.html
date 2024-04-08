@@ -10,12 +10,17 @@
 
                 width: 80%;
                 border-collapse: collapse;
+                background-color:skyblue;
 
             }
 
             table, th, td{
 
                 border: 1px solid;
+                height: 25px;
+                text-align: center;
+                font-family: Helvetica, sans-serif;
+                
             }
 
         </style>
@@ -24,7 +29,7 @@
 
     <body>
 
-        <div style="text-align: center;">
+        <div style="text-align: center; font-family: Helvetica, sans-serif;">
         
             <h1>VISTA PRINCIPAL - GESTOR DE TAREAS</h1>
 
@@ -34,13 +39,13 @@
 
             <a href="{% url 'tareasApp:nuevaTarea' %}">
 
-                <button style="width: 120px;">Nueva tarea</button>
+                <button style="width: 120px; height: 25px;">Nueva tarea</button>
 
             </a>
 
             <a>
 
-                <button style="width: 120px;">Ver historico</button>
+                <button style="width: 120px; height: 25px;">Ver historico</button>
                 
             </a>
 
@@ -50,7 +55,7 @@
 
         <div style="display: flex; flex-direction: row; justify-content: center;">
 
-            <table>
+            <table id="tablaTareas">
 
                 <thead>
 
@@ -64,15 +69,16 @@
 
                 <tbody>
 
-                    {% for tarea in lista_tareas %}
+                    {% for tareaInfo in tareasTotales %}
 
                     <tr>
-
-                        <td>{{tarea.0}}</td>
-                        <td>{{tarea.2}}</td>
-                        <td>{{tarea.3}}</td>
-                        <td>{{tarea.4}}</td>
-                        <td></td>
+                        
+                        <td id="tareaId" hidden>{{tareaInfo.id}}</td>
+                        <td>{{tareaInfo.nombre}}</td>
+                        <td>{{tareaInfo.fechaFin}}</td>
+                        <td>{{tareaInfo.estadoTarea}}</td>
+                        <td>{{tareaInfo.responsableTarea}}</td>
+                        <td><button>Finalizar</button></td>
 
                     </tr>
 

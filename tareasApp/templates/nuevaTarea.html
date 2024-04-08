@@ -5,11 +5,21 @@
 
         <title>Crear nueva tarea</title>
 
+        <style>
+
+            .etiquetas{
+
+                font-family: Helvetica, sans-serif;
+                
+            }
+
+        </style>
+
     </head>
 
     <body>
 
-        <div style="text-align: center;">
+        <div style="text-align: center; font-family: Helvetica, sans-serif;">
         
             <h1>CREAR NUEVA TAREA</h1>
 
@@ -21,7 +31,7 @@
 
             <a href="{% url 'tareasApp:indice' %}">
 
-                <button>Regresar</button>
+                <button style="height: 25px; margin-left: 200px;">Regresar</button>
 
             </a>
 
@@ -29,7 +39,7 @@
 
         <br>
 
-        <div style="display: flex; flex-direction: row; justify-content: center;">
+        <div class="etiquetas" style="display: flex; flex-direction: row; justify-content: center;">
 
             <form style="display: flex; flex-direction: row; width: 100%; justify-content: center;" method="post" action="{% url 'tareasApp:nuevaTarea' %}">
 
@@ -37,36 +47,36 @@
 
                 <div style="width: 60%;">
 
-                    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <div style="display: flex; flex-direction: row; justify-content: space-between; height: 60%;">
 
                         <div style="display: flex; flex-direction: column; width: 45%;">
 
-                            <label>Nombre</label>
+                            <label style="height: 30px;">Nombre</label>
                             <input type="text" name="nombre" required>
 
                         </div>
 
                         <div style="display: flex; flex-direction: column; width: 45%;">
 
-                            <label>Descripcion</label>
+                            <label style="height: 30px;">Descripcion</label>
                             <input type="text" name="descripcion" required>
 
                         </div>
 
                     </div>
 
-                    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <div style="display: flex; flex-direction: row; justify-content: space-between; height: 60%;">
 
                         <div style="display: flex; flex-direction: column; width: 45%;">
 
-                            <label>Fecha de fin</label>
+                            <label style="height: 30px;">Fecha de fin</label>
                             <input type="date" name="fechaFin" required>
 
                         </div>
 
                         <div style="display: flex; flex-direction: column; width: 45%;">
 
-                            <label>Responsable</label>
+                            <label style="height: 30px;">Responsable</label>
                             <input type="text" name="responsableTarea" required>
 
                         </div>
@@ -77,7 +87,7 @@
 
                     <div>
 
-                        <input type="submit" value="Crear tarea">
+                        <input style="height: 25px;" type="submit" value="Crear tarea">
 
                     </div>
 
